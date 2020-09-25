@@ -16,7 +16,6 @@
     "@material-ui/icons": "^4.9.1",
     "@rollup/plugin-commonjs": "^12.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
-    "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-links": "^5.3.19",
     "@storybook/addons": "^5.3.19",
     "@storybook/preset-typescript": "^3.0.0",
@@ -41,6 +40,7 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "predeploy-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
     "build": "rollup -c",
     "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"

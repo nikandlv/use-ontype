@@ -12,7 +12,7 @@ Easy to use utility to detect when user finishes typing, starts typing, or becom
 
 ## Demo
 
-soon!
+[Storybook demo here!](https://nikandlv.github.io/use-onetype)
 
 ## Install it
 
