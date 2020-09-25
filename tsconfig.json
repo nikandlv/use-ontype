@@ -12,5 +12,26 @@
     "esModuleInterop": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "build"]
+  "exclude": ["node_modules", "build"],
+  "declaration": true,
+  "declarationMap": true,
+  "noEmit": true,
+  "jsx": "preserve",
+  "strict": true,
+  "pretty": true,
+  "sourceMap": true,
+  /* Additional Checks */
+  "noUnusedLocals": true,
+  "noUnusedParameters": true,
+  "noImplicitReturns": true,
+  "noFallthroughCasesInSwitch": true,
+  /* Module Resolution Options */
+  "moduleResolution": "node",
+  "esModuleInterop": true,
+  "allowSyntheticDefaultImports": true,
+  "resolveJsonModule": true,
+  "allowJs": true,
+  "skipLibCheck": true,
+  "forceConsistentCasingInFileNames": true,
+  "isolatedModules": true
 }

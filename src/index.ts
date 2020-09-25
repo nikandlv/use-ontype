@@ -1,1 +1,1 @@
-export { default as HelloWorld } from "./hello-world";
+export { useOneType, createOnTypeHandler } from "./hooks";
