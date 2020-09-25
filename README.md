@@ -37,7 +37,7 @@ import { createOnTypeHandler } from "use-ontype";
 ```tsx
 import { useOneType } from "use-ontype";
 
-function UnControlledOnType() {
+function Example() {
   const onType = useOneType(
     {
       onTypeStart: (val) => console.log("started", val),
@@ -49,7 +49,6 @@ function UnControlledOnType() {
 
   return (
     <div>
-      <p>unControlledRenderers: {unControlledRenderers}</p>
       <TextField
         fullWidth
         label="find user by email"
