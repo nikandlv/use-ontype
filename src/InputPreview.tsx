@@ -1,6 +1,6 @@
 import * as React from "react";
 import clsx from "clsx";
-import { useOneType } from "./hooks";
+import { useonType } from "./hooks";
 import TextField from "@material-ui/core/TextField";
 import {
   List,
@@ -70,7 +70,7 @@ let controlledRenderers = 0;
 function ControlledOnType() {
   const [isTyping, setIsTyping] = React.useState(false);
 
-  const onType = useOneType(
+  const onType = useonType(
     {
       onTypeStart: (val) => {
         console.log("started", val);
@@ -102,7 +102,7 @@ function ControlledOnType() {
 
 let unControlledRenderers = 0;
 function UnControlledOnType() {
-  const onType = useOneType(
+  const onType = useonType(
     {
       onTypeStart: (val) => console.log("started", val),
       onTypeFinish: (val) => console.log("finished", val),
@@ -203,7 +203,7 @@ function IGithubUsernameSearch() {
       items: [],
     });
 
-  const onType = useOneType(
+  const onType = useonType(
     {
       onTypeStart: (val) => {
         console.log("started", val);

@@ -12,7 +12,7 @@ Easy to use utility to detect when user finishes typing, starts typing, or becom
 
 ## Demo
 
-[Storybook demo here!](https://nikandlv.github.io/use-onetype)
+[Storybook demo here!](https://nikandlv.github.io/use-onType)
 
 ## Install it
 
@@ -26,7 +26,7 @@ npm install use-ontype
 
 ```ts
 // the hook
-import { useOneType } from "use-ontype";
+import { useonType } from "use-ontype";
 
 // for components
 import { createOnTypeHandler } from "use-ontype";
@@ -35,10 +35,10 @@ import { createOnTypeHandler } from "use-ontype";
 ## Use it!
 
 ```tsx
-import { useOneType } from "use-ontype";
+import { useonType } from "use-ontype";
 
 function Example() {
-  const onType = useOneType(
+  const onType = useonType(
     {
       onTypeStart: (val) => console.log("started", val),
       onTypeFinish: (val) => console.log("finished", val),
