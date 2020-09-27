@@ -82,6 +82,10 @@ Called when user finishes typing
 
 Delay is the interval which we check if user is still typing or not. `default: 1000ms`
 
+## Todo
+
+- need to clean the example file, its quite messy
+
 # The Licence
 
 DO WHAT EVER YOU WANT!
