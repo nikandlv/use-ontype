@@ -6,7 +6,7 @@ interface callbacks {
   onTypeStart?: onTypeCallback;
   onTypeFinish?: onTypeCallback;
   onChange?: (
-    event: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
+    event: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => void;
 }
 
@@ -16,17 +16,17 @@ let TIMEOUT_CACHE: NodeJS.Timeout | number;
 export function createOnTypeHandler(callbacks: callbacks, delay?: number) {
   return {
     onChange: (event: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-      callbacks.onChange && callbacks.onChange(event);
+      callbacks?.onChange(event);
       if (!LOCK) {
         LOCK = true;
-        callbacks.onTypeStart && callbacks.onTypeStart(event.target.value);
+        callbacks?.onTypeStart(event.target.value);
       }
 
       TIMEOUT_CACHE && clearTimeout(TIMEOUT_CACHE as NodeJS.Timeout);
       let cache = event.target.value;
 
       TIMEOUT_CACHE = setTimeout(() => {
-        callbacks.onTypeFinish && callbacks.onTypeFinish(cache);
+        callbacks?.onTypeFinish(cache);
         LOCK = false;
       }, delay || 1000);
     },
