@@ -1,6 +1,6 @@
 import * as React from "react";
 import clsx from "clsx";
-import { useonType } from "./hooks";
+import Axios from "axios";
 import TextField from "@material-ui/core/TextField";
 import {
   List,
@@ -12,118 +12,11 @@ import {
   CircularProgress,
   InputAdornment,
   Collapse,
-  Card,
-  CardContent,
   Button,
   Typography,
-  Divider,
-  Box,
 } from "@material-ui/core";
-import Axios from "axios";
 import ArrowIcon from "@material-ui/icons/ChevronLeftRounded";
-
-export interface IInputPreviewProps {}
-
-const useStyles = makeStyles({
-  card: {
-    marginTop: 24,
-    maxWidth: 360,
-    borderRadius: 24,
-    backgroundColor: "#fff",
-    boxShadow: "0 20px 50px rgb(255 33 33 / 16%)",
-    border: "1px solid rgb(255 33 33 / 12%)",
-  },
-});
-
-export function InputPreview(props: IInputPreviewProps) {
-  const classes = useStyles();
-  return (
-    <Box m={6}>
-      <Card className={classes.card}>
-        <CardContent>
-          <ControlledOnType />
-        </CardContent>
-      </Card>
-
-      <Card className={classes.card}>
-        <CardContent>
-          <UnControlledOnType />
-        </CardContent>
-      </Card>
-
-      <Card className={classes.card}>
-        <CardContent>
-          <Typography variant="h6" gutterBottom>
-            Github search example
-          </Typography>
-
-          <Divider />
-
-          <IGithubUsernameSearch />
-        </CardContent>
-      </Card>
-    </Box>
-  );
-}
-
-let controlledRenderers = 0;
-function ControlledOnType() {
-  const [isTyping, setIsTyping] = React.useState(false);
-
-  const onType = useonType(
-    {
-      onTypeStart: (val) => {
-        console.log("started", val);
-        setIsTyping(true);
-      },
-      onTypeFinish: (val) => {
-        console.log("finished", val);
-        setIsTyping(false);
-      },
-    },
-    800,
-  );
-
-  controlledRenderers++;
-
-  return (
-    <div>
-      <p>controlledRenderers: {controlledRenderers}</p>
-      <TextField
-        fullWidth
-        label="find user by email"
-        {...onType}
-        variant="outlined"
-      />
-      {isTyping && <Typography variant="caption">Typing ...</Typography>}
-    </div>
-  );
-}
-
-let unControlledRenderers = 0;
-function UnControlledOnType() {
-  const onType = useonType(
-    {
-      onTypeStart: (val) => console.log("started", val),
-      onTypeFinish: (val) => console.log("finished", val),
-    },
-    800,
-  );
-
-  unControlledRenderers++;
-
-  return (
-    <div>
-      <p>unControlledRenderers: {unControlledRenderers}</p>
-      <TextField
-        fullWidth
-        label="find user by email"
-        {...onType}
-        variant="outlined"
-      />
-    </div>
-  );
-}
+import { useonType } from "../src";
 
 const GITHUB_USER_SEARCH_API = "https://api.github.com/search/users";
 
@@ -183,7 +76,7 @@ const useGithubStyles = makeStyles({
   },
 });
 
-function IGithubUsernameSearch() {
+function Component() {
   const classes = useGithubStyles();
   const [isTyping, setIsTyping] = React.useState(false);
 
@@ -228,9 +121,7 @@ function IGithubUsernameSearch() {
   );
 
   return (
-    <div>
-      <br />
-
+    <>
       <TextField
         label="find by github username"
         {...onType}
@@ -278,6 +169,13 @@ function IGithubUsernameSearch() {
           })}
         />
       </Button>
-    </div>
+    </>
   );
 }
+
+export default {
+  title: "With data fetch",
+  component: Component,
+};
+
+export const Demo = (): React.ReactNode => <Component />;
