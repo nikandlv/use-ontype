@@ -1,10 +1,10 @@
 import * as React from "react";
-import { useonType } from "../src";
+import { useOnType } from "../src";
 import TextField from "@material-ui/core/TextField";
 
 let unControlledRenderers = 0;
 function UnControlledOnType() {
-  const onType = useonType(
+  const onType = useOnType(
     {
       onTypeStart: (val) => console.log("started", val),
       onTypeFinish: (val) => console.log("finished", val),

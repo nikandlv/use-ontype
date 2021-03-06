@@ -2,6 +2,10 @@
 
 Easy to use utility to detect when user finishes typing, starts typing, or becomes idle!
 
+##### Breaking change
+
+from version `1.2.0` the hook was renamed for better naming to `useOnType`
+
 ## Features
 
 - React hook or component base
@@ -26,7 +30,7 @@ npm install use-ontype
 
 ```ts
 // the hook
-import { useonType } from "use-ontype";
+import { useOnType } from "use-ontype";
 
 // for components
 import { createOnTypeHandler } from "use-ontype";
@@ -35,10 +39,10 @@ import { createOnTypeHandler } from "use-ontype";
 ## Use it!
 
 ```tsx
-import { useonType } from "use-ontype";
+import { useOnType } from "use-ontype";
 
 function Example() {
-  const onType = useonType(
+  const onType = useOnType(
     {
       onTypeStart: (val) => console.log("started", val),
       onTypeFinish: (val) => console.log("finished", val),

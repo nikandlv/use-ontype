@@ -1,6 +1,6 @@
 {
   "name": "use-ontype",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "main": "./build/index.js",
   "module": "./build/index.es.js",
   "author": "Nikan dalvand",

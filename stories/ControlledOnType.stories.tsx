@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useonType } from "../src";
+import { useOnType } from "../src";
 import TextField from "@material-ui/core/TextField";
 import { Typography } from "@material-ui/core";
 
@@ -7,7 +7,7 @@ let controlledRenderers = 0;
 function ControlledOnType() {
   const [isTyping, setIsTyping] = React.useState(false);
 
-  const onType = useonType(
+  const onType = useOnType(
     {
       onTypeStart: (val) => {
         console.log("started", val);

@@ -1,1 +1,1 @@
-export { useonType, createOnTypeHandler } from "./hooks";
+export { useOnType, createOnTypeHandler } from "./hooks";

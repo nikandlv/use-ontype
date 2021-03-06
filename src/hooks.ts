@@ -33,7 +33,7 @@ export function createOnTypeHandler(callbacks: callbacks, delay?: number) {
   };
 }
 
-export function useonType(callbacks: callbacks, delay?: number) {
+export function useOnType(callbacks: callbacks, delay?: number) {
   return useMemo(() => {
     return createOnTypeHandler(callbacks, delay);
   }, [callbacks, delay]);

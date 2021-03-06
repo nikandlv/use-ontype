@@ -16,7 +16,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import ArrowIcon from "@material-ui/icons/ChevronLeftRounded";
-import { useonType } from "../src";
+import { useOnType } from "../src";
 
 const GITHUB_USER_SEARCH_API = "https://api.github.com/search/users";
 
@@ -96,7 +96,7 @@ function Component() {
       items: [],
     });
 
-  const onType = useonType(
+  const onType = useOnType(
     {
       onTypeStart: (val) => {
         console.log("started", val);
